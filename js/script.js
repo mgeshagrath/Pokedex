@@ -178,7 +178,7 @@ const App = class {
   }
 
   getInputValue() {
-    const inputValue = this.#input.value.toLowerCase();
+    const inputValue = this.#input.value.toLowerCase().trim();
 
     if (!inputValue.match(/^[a-z0-9]+$/)) return;
 
