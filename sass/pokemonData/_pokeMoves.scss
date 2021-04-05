@@ -1,0 +1,38 @@
+.pokedex {
+  &__moves {
+    @include shadowRadiusPadding;
+    @include flexColum;
+    grid-column: boxTwoStart / boxTwoEnd;
+    grid-row: 2 / 3;
+  }
+
+  &__moveset {
+    list-style: none;
+    margin-top: 0.5rem;
+  }
+
+  &__move {
+    display: flex;
+    // @include flexBetween;
+
+    &--name {
+      flex: 0 0 40%;
+    }
+
+    &--type {
+      flex: 0 0 20%;
+    }
+
+    &--dmgType {
+      flex: 0 0 20%;
+    }
+
+    &--power {
+      flex: 0 0 20%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

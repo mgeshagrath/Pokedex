@@ -1,0 +1,40 @@
+.bold {
+  font-weight: 700;
+}
+
+.effectTitles {
+  position: relative;
+  display: inline;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    height: 100%;
+    width: 65%;
+    opacity: 0.7;
+    transform: scale(1.07, 1.05) skewX(-15deg);
+    background-image: linear-gradient(
+      to top left,
+      var(--color-primary),
+      var(--color-primary-30)
+    );
+  }
+}
+
+.spinner {
+  @include leftNRightAtZero;
+  position: absolute;
+  margin: 10rem auto;
+  text-align: center;
+  transition: all 0.2s;
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+    fill: var(--color-rotom-primary);
+    animation: rotate 2s infinite linear;
+  }
+}

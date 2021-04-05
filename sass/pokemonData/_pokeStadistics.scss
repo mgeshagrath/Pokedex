@@ -1,0 +1,24 @@
+.pokedex {
+  &__stadistics {
+    @include shadowRadiusPadding;
+    @include flexColum;
+    grid-column: boxOneStart / boxOneEnd;
+    grid-row: 2 / 3;
+    // align-items: center;
+  }
+
+  &__stats {
+    height: 100%;
+    font-size: var(--font-size-xl);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__stat {
+    list-style: none;
+  }
+}

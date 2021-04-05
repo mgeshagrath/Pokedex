@@ -1,0 +1,60 @@
+.pokedex {
+  &__pokemon {
+    @include shadowRadiusPadding;
+    padding: 1rem 2rem;
+    display: flex;
+    position: relative;
+  }
+
+  // Sprite and pokemon IMG
+  &__sprite {
+    flex: 0 0 35%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &__img {
+    width: 20rem;
+  }
+
+  // Name - Type - Ability BOX
+  &__number {
+    color: var(--color-primary-dark);
+    position: absolute;
+    top: -20%;
+    left: 2%;
+  }
+
+  &__info {
+    @include flexColum;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  // Types label
+
+  &__types,
+  &__abilities {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    font-style: italic;
+  }
+  // Abilities label
+
+  &__abilities {
+    font-size: var(--font-size-s);
+  }
+
+  &__type,
+  &__ability {
+    @include paddingRadiusBorderCenter;
+  }
+
+  &__ability {
+    align-self: center;
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

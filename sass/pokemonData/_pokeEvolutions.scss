@@ -1,0 +1,27 @@
+.pokedex {
+  &__description {
+    @include flexColum;
+    @include shadowRadiusPadding;
+
+    grid-column: boxTwoStart / boxTwoEnd;
+    grid-row: 1 / 2;
+    justify-content: space-between;
+  }
+
+  // &__description-title {
+  //   align-self: center;
+  // }
+
+  &__forms {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__alternative {
+    @include paddingRadiusBorderCenter;
+    margin-top: 0.5rem;
+  }
+}

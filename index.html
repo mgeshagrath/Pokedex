@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+
+    <title>Pokedex</title>
+  </head>
+  <body class="rotom">
+    <!-- ROTOM -->
+    <span class="rotom__dot rotom__dot--right"></span>
+    <span class="rotom__dot rotom__dot--left"></span>
+    <span class="rotom__eyes rotom__eyes--right"> </span>
+    <span class="rotom__eyes rotom__eyes--left"></span>
+    <span class="rotom__mouth"></span>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+      <form class="form">
+        <div class="form__wrapper">
+          <input
+            type="text"
+            class="form__input"
+            placeholder="Pokemon name or id"
+          />
+          <button class="form__button">
+            <svg class="form__button-icon">
+              <use href="img/icons.svg#icon-search"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="pokedex">
+        <div class="message">
+          <div class="message__img">
+            <img
+              src="img/pikachu.svg"
+              alt="Pikachu"
+              class="message__pikachuImg"
+            />
+          </div>
+          <p>Start by searching for a Pokemon!</p>
+          <p class="message__instructions">
+            New here?<br />
+            Try with: Pikachu or 25
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

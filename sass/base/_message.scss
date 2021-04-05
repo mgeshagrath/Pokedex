@@ -1,0 +1,56 @@
+.message {
+  @include flexColum;
+  font-size: var(--font-size-xl);
+  color: var(--color-grey-light);
+  font-style: italic;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  :not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    width: 20rem;
+  }
+
+  &__pikachuImg {
+    width: 100%;
+    filter: opacity(50%);
+  }
+
+  &__instructions {
+    font-size: var(--font-size-s);
+  }
+
+  &__error {
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    color: var(--color-rotom-primary);
+  }
+}
+
+// .welcome-message,
+// .message {
+//   font-size: 2.5rem;
+//   font-weight: 700;
+//   text-align: center;
+//   color: var(--color-rotom-primary);
+
+//   transition: all 0.2s;
+
+//   :not(:last-child) {
+//     margin-bottom: 1rem;
+//   }
+// }
+
+// .welcome-message {
+//   font-weight: 400;
+//   font-size: 3.5rem;
+//   color: var(--color-grey-light);
+// }

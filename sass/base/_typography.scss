@@ -1,0 +1,28 @@
+%heading {
+  font-weight: 300;
+  font-size: var(--font-size-xl);
+  text-align: right;
+}
+
+.heading-1,
+.heading-2 {
+  @extend %heading;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.heading-1 {
+  margin-top: 0.5rem;
+  color: var(--color-grey-dark);
+}
+
+.heading-2 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: var(--font-size-s);
+  text-align: center;
+}

@@ -1,0 +1,53 @@
+.form {
+  @include flexHorizonCenter;
+  height: 5rem;
+
+  position: relative;
+  z-index: 5;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+  }
+
+  &__input {
+    @include fontRelated;
+    width: 11rem;
+    height: 4rem;
+
+    border-radius: var(--border-radius-l);
+    padding-left: 1rem;
+    padding-right: 2.7rem;
+
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-light);
+    backface-visibility: hidden;
+    transition: all 0.2s;
+
+    &::-webkit-input-placeholder {
+      color: var(--color-grey-light);
+    }
+
+    &:focus {
+      width: 20rem;
+      padding-right: 3.5rem;
+      border: 1px solid var(--color-grey-dark);
+    }
+  }
+
+  &__button {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-white);
+    border: none;
+    position: absolute;
+    right: 7%;
+  }
+
+  &__button-icon {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-grey-light);
+  }
+}
