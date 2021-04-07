@@ -1,0 +1,92 @@
+.rotom {
+  // Eyes
+
+  &__eyes {
+    @include flexHorizonCenter;
+    width: 120px;
+    height: 200px;
+
+    border-radius: var(--border-radius-circle);
+    border: 5px solid var(--color-rotom-dark-blue);
+    background-color: var(--color-white);
+
+    position: absolute;
+    top: -25%;
+    z-index: 100;
+
+    @include responsive(tab-port) {
+      width: 110px;
+      height: 180px;
+      top: -13%;
+    }
+
+    @include responsive(phone) {
+      width: 90px;
+      height: 160px;
+      border: 4px solid var(--color-rotom-dark-blue);
+
+      top: -11%;
+    }
+
+    @include responsive(pho-small) {
+      top: -10%;
+      width: 70px;
+      height: 120px;
+    }
+
+    &--right {
+      left: 25%;
+      transform: rotate(-15deg);
+
+      @include responsive(tab-port) {
+        left: 5%;
+      }
+
+      @include responsive(phone) {
+        transform: rotate(-10deg);
+      }
+    }
+
+    &--left {
+      right: 25%;
+      transform: rotate(15deg);
+
+      @include responsive(tab-port) {
+        right: 5%;
+      }
+
+      @include responsive(phone) {
+        transform: rotate(10deg);
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 150px;
+      border: 5px solid var(--color-rotom-blue);
+      z-index: 1;
+
+      @include responsive(tab-port) {
+        border: 4px solid var(--color-rotom-blue);
+      }
+
+      @include responsive(pho-small) {
+        border: 1px solid var(--color-rotom-blue);
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 60px;
+      border-radius: var(--border-radius-circle);
+      background-color: var(--color-rotom-blue);
+      position: absolute;
+
+      animation: blink 5s infinite;
+
+      @include responsive(pho-small) {
+        width: 40px;
+      }
+    }
+  }
+}

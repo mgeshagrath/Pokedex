@@ -5,6 +5,11 @@
     grid-column: boxOneStart / boxOneEnd;
     grid-row: 2 / 3;
     // align-items: center;
+
+    @include responsive(tab-port) {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 2 / 3;
+    }
   }
 
   &__stats {
@@ -16,6 +21,14 @@
     gap: 1rem;
     justify-items: center;
     align-items: center;
+
+    @include responsive(phone) {
+      font-size: var(--font-size-l);
+    }
+
+    @include responsive(pho-small) {
+      font-size: var(--font-size-m);
+    }
   }
 
   &__stat {

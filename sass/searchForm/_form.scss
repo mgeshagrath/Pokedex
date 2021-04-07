@@ -5,6 +5,17 @@
   position: relative;
   z-index: 5;
 
+  @include responsive(tab-port) {
+    transform: translateY(-4rem);
+  }
+  @include responsive(phone) {
+    transform: translateY(-9rem);
+  }
+
+  @include responsive(pho-small) {
+    transform: translateY(-7.5rem);
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -25,6 +36,13 @@
     backface-visibility: hidden;
     transition: all 0.2s;
 
+    @include responsive(phone) {
+      width: 8rem;
+      font-size: var(--font-size-xs);
+      padding-left: 0.5rem;
+      padding-right: 1.5rem;
+    }
+
     &::-webkit-input-placeholder {
       color: var(--color-grey-light);
     }
@@ -33,6 +51,10 @@
       width: 20rem;
       padding-right: 3.5rem;
       border: 1px solid var(--color-grey-dark);
+
+      @include responsive(phone) {
+        width: 10rem;
+      }
     }
   }
 
@@ -43,11 +65,21 @@
     border: none;
     position: absolute;
     right: 7%;
+
+    @include responsive(phone) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   &__button-icon {
     width: 2rem;
     height: 2rem;
     fill: var(--color-grey-light);
+
+    @include responsive(phone) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }

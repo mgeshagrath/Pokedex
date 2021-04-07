@@ -21,6 +21,14 @@
       var(--color-primary),
       var(--color-primary-30)
     );
+
+    @include responsive(tab-land) {
+      width: 70%;
+    }
+
+    @include responsive(phone) {
+      width: 82%;
+    }
   }
 }
 

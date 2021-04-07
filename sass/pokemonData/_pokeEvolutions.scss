@@ -6,6 +6,11 @@
     grid-column: boxTwoStart / boxTwoEnd;
     grid-row: 1 / 2;
     justify-content: space-between;
+
+    @include responsive(tab-port) {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 3 / 4;
+    }
   }
 
   // &__description-title {

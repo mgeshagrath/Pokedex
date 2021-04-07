@@ -4,17 +4,32 @@
     padding: 1rem 2rem;
     display: flex;
     position: relative;
+    grid-column: boxOneStart / boxOneEnd;
+    grid-row: 1 / 2;
+
+    @include responsive(tab-port) {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 1 / 2;
+      flex-direction: column;
+      // position: unset;
+    }
   }
 
   // Sprite and pokemon IMG
   &__sprite {
     flex: 0 0 35%;
+    // 40%
     align-self: center;
     justify-self: center;
+
+    @include responsive(tab-land) {
+      flex: 0 0 37.5%;
+    }
   }
 
   &__img {
-    width: 20rem;
+    // width: 20rem;
+    width: 100%;
   }
 
   // Name - Type - Ability BOX
@@ -23,8 +38,29 @@
     position: absolute;
     top: -20%;
     left: 2%;
-  }
 
+    @include responsive(tab-port) {
+      //      top: -40%;
+      // left: 45%;
+
+      top: -38%;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    // @include responsive(tab-port) {
+    //   top: -40%;
+    //   left: 45%;
+    // }
+
+    @include responsive(phone) {
+      top: -25%;
+    }
+
+    @include responsive(pho-small) {
+      top: -15%;
+    }
+  }
   &__info {
     @include flexColum;
     flex: 1;

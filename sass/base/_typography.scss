@@ -2,6 +2,10 @@
   font-weight: 300;
   font-size: var(--font-size-xl);
   text-align: right;
+
+  @include responsive(pho-small) {
+    font-size: var(--font-size-l);
+  }
 }
 
 .heading-1,
@@ -14,6 +18,10 @@
 .heading-1 {
   margin-top: 0.5rem;
   color: var(--color-grey-dark);
+
+  @include responsive(tab-port) {
+    text-align: center;
+  }
 }
 
 .heading-2 {

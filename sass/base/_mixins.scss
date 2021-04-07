@@ -1,3 +1,27 @@
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == pho-small {
+    @media only screen and (max-width: 349px) {
+      @content;
+    }
+  }
+}
+
 @mixin shadowRadiusPadding {
   box-shadow: 0 2rem 6rem var(--color-primary-30);
   border-radius: var(--border-radius-l);
@@ -37,12 +61,17 @@
 }
 
 @mixin dot {
-  padding: var(--padding-s);
+  padding: 10px;
   border-radius: var(--border-radius-circle);
   border: 5px solid var(--color-rotom-primary-dark);
   background-color: var(--color-rotom-primary-light);
   box-sizing: content-box;
   position: absolute;
+
+  @include responsive(pho-small) {
+    padding: 4px;
+    border: 2px solid var(--color-rotom-primary-dark);
+  }
 }
 
 @mixin fontRelated {

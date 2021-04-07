@@ -1,0 +1,34 @@
+.rotom {
+  // Mouth
+  &__mouth {
+    @include marginCenter;
+    @include leftNRightAtZero;
+    width: 380px;
+    height: 250px;
+    border-radius: var(--border-radius-circle);
+    background-color: var(--color-white);
+    position: absolute;
+    top: -3%;
+    // z-index: 2;
+
+    @include responsive(tab-land) {
+      width: 430px;
+      // height: 100px;
+    }
+
+    @include responsive(tab-port) {
+      top: -8%;
+      width: 460px;
+    }
+
+    @include responsive(phone) {
+      width: 290px;
+      height: 200px;
+    }
+
+    @include responsive(pho-small) {
+      width: 220px;
+      height: 100px;
+    }
+  }
+}

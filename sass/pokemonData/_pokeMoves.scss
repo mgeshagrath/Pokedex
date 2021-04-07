@@ -4,16 +4,29 @@
     @include flexColum;
     grid-column: boxTwoStart / boxTwoEnd;
     grid-row: 2 / 3;
+
+    @include responsive(tab-port) {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 4 / 5;
+    }
   }
 
   &__moveset {
+    @include flexColum;
+    justify-content: space-between;
+    height: 100%;
     list-style: none;
     margin-top: 0.5rem;
+    padding: 0 1.1rem;
+    font-size: var(--font-size-s);
+
+    @include responsive(pho-small) {
+      font-size: var(--font-size-xs);
+    }
   }
 
   &__move {
     display: flex;
-    // @include flexBetween;
 
     &--name {
       flex: 0 0 40%;

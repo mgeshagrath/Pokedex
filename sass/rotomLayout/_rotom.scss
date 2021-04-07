@@ -4,106 +4,28 @@
   @include marginCenter;
   max-width: 1200px;
   height: 800px;
-  border: 10rem solid var(--color-rotom-primary);
-  border-top: 15rem solid var(--color-rotom-primary);
+  border: 100px solid var(--color-rotom-primary);
+  border-top: 150px solid var(--color-rotom-primary);
   background-color: var(--color-white);
-
   position: relative;
   z-index: 10;
 
-  // Noise
-  &::after {
-    @include marginCenter;
-    @include leftNRightAtZero;
-    content: '';
-    width: 35rem;
-    height: 15rem;
-    border-top-right-radius: var(--border-radius-circle);
-    border-top-left-radius: var(--border-radius-circle);
-    background-color: var(--color-black);
-    position: absolute;
-    top: -23%;
-    z-index: 0;
+  @include responsive(tab-land) {
+    border: 70px solid var(--color-rotom-primary);
+    border-top: 150px solid var(--color-rotom-primary);
   }
 
-  // Mouth
-  &__mouth {
-    @include marginCenter;
-    @include leftNRightAtZero;
-    width: 38rem;
-    height: 25rem;
-    border-radius: var(--border-radius-circle);
-    background-color: var(--color-white);
-    position: absolute;
-    top: -3%;
-    z-index: 2;
+  @include responsive(tab-port) {
+    height: 1200px;
   }
 
-  // Side dots
-
-  &__dot {
-    @include dot;
-    top: -22%;
-
-    &--right {
-      right: -6%;
-    }
-
-    &--left {
-      left: -6%;
-    }
-
-    &--right::before,
-    &--left::before {
-      content: '';
-      @include dot;
-      top: 145%;
-      left: -25%;
-    }
+  @include responsive(phone) {
+    border: 30px solid var(--color-rotom-primary);
+    border-top: 120px solid var(--color-rotom-primary);
   }
 
-  // Eyes
-
-  &__eyes {
-    @include flexHorizonCenter;
-    width: 12rem;
-    height: 20rem;
-
-    border-radius: var(--border-radius-circle);
-    border: 5px solid var(--color-rotom-dark-blue);
-    background-color: var(--color-white);
-
-    position: absolute;
-    top: -25%;
-    z-index: 100;
-
-    &::before {
-      content: '';
-      width: 15rem;
-      border: 5px solid var(--color-rotom-blue);
-      z-index: 1;
-    }
-
-    &::after {
-      content: '';
-      width: 6rem;
-      height: 13rem;
-
-      border-radius: var(--border-radius-circle);
-      background-color: var(--color-rotom-blue);
-      position: absolute;
-
-      animation: blink 5s infinite;
-    }
-
-    &--right {
-      left: 25%;
-      transform: rotate(-15deg);
-    }
-
-    &--left {
-      right: 25%;
-      transform: rotate(15deg);
-    }
+  @include responsive(pho-small) {
+    border: 15px solid var(--color-rotom-primary);
+    border-top: 120px solid var(--color-rotom-primary);
   }
 }

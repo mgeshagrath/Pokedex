@@ -6,10 +6,11 @@
   grid-row: 1 / -1;
   grid-column: 1 / -1;
   justify-self: center;
-  align-self: center;
+  align-self: flex-start;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 3rem;
 
   :not(:last-child) {
     margin-bottom: 2rem;

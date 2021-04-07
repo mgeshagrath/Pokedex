@@ -243,7 +243,7 @@ const App = class {
     this.#pokedex.innerHTML = '';
 
     const markup = `
-    <div class="pokedex">
+
       <header class="pokedex__pokemon">
       ${this.renderPokemonInfo(pokemon)}
       </header>
@@ -278,8 +278,7 @@ const App = class {
         <ul class="pokedex__moveset">
           ${this.renderMoveset(this.#pokemon)}
         </ul>
-      </section>
-      </div>
+
     `;
 
     this.#pokedex.insertAdjacentHTML('afterbegin', markup);

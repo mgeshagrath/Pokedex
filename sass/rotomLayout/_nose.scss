@@ -1,0 +1,24 @@
+.rotom {
+  &::before {
+    @include marginCenter;
+    @include leftNRightAtZero;
+    content: '';
+    width: 350px;
+    height: 150px;
+    border-top-right-radius: var(--border-radius-circle);
+    border-top-left-radius: var(--border-radius-circle);
+    background-color: var(--color-black);
+    position: absolute;
+    top: -23%;
+    z-index: 0;
+
+    @include responsive(tab-land) {
+      width: 310px;
+      top: -20%;
+    }
+
+    @include responsive(tab-port) {
+      content: none;
+    }
+  }
+}

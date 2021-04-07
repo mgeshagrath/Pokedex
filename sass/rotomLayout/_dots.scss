@@ -1,0 +1,60 @@
+.rotom {
+  // Side dots
+
+  &__dot {
+    @include dot;
+    top: -22%;
+
+    @include responsive(tab-port) {
+      top: -12%;
+    }
+
+    @include responsive(phone) {
+      top: -10%;
+    }
+
+    &--right {
+      right: -6%;
+
+      @include responsive(tab-port) {
+        right: -8%;
+      }
+      @include responsive(phone) {
+        right: -5.5%;
+      }
+
+      @include responsive(pho-small) {
+        right: -2.5%;
+      }
+    }
+
+    &--left {
+      left: -6%;
+
+      @include responsive(tab-port) {
+        left: -8%;
+      }
+
+      @include responsive(phone) {
+        left: -5.5%;
+      }
+
+      @include responsive(pho-small) {
+        left: -2.5%;
+      }
+    }
+
+    &--right::before,
+    &--left::before {
+      content: '';
+      @include dot;
+      top: 145%;
+      left: -25%;
+
+      // @include responsive(phone) {
+      //   top: 180%;
+      //   left: -50%;
+      // }
+    }
+  }
+}

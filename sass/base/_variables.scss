@@ -6,6 +6,11 @@
   --color-rotom-blue: #0026ff;
   --color-rotom-dark-blue: #0c1b71;
 
+  // Rottom eye animation
+
+  --height: 95px;
+  --height-small: 65px;
+
   // Content colors
 
   --color-primary: #5ec576;
@@ -17,11 +22,12 @@
   --color-black: #000;
 
   // Fonts
-  --font-primary: 'Roboto', sans-serif;
-  --font-size-s: 1.2rem;
+  --font-primary: 'Lato', sans-serif;
+  --font-size-xs: 1.2rem;
+  --font-size-s: 1.35rem;
   --font-size-m: 1.6rem;
   --font-size-l: 2rem;
-  --font-size-xl: 3rem;
+  --font-size-xl: 2.9rem;
 
   // Border radius
   --border-radius-s: 12px;
