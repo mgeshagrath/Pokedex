@@ -1,0 +1,641 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+:root {
+  --color-rotom-primary: #d26757;
+  --color-rotom-primary-light: #78564d;
+  --color-rotom-primary-dark: #7d462a;
+  --color-rotom-blue: #0026ff;
+  --color-rotom-dark-blue: #0c1b71;
+  --height: 95px;
+  --height-small: 65px;
+  --color-primary: #5ec576;
+  --color-primary-dark: #4bbb7d;
+  --color-primary-30: #5ec5764d;
+  --color-white: #f2f3f4;
+  --color-grey-light: #ccc;
+  --color-grey-dark: #333;
+  --color-black: #000;
+  --font-primary: 'Lato', sans-serif;
+  --font-size-xs: 1.2rem;
+  --font-size-s: 1.35rem;
+  --font-size-m: 1.6rem;
+  --font-size-l: 2rem;
+  --font-size-xl: 2.9rem;
+  --border-radius-s: 12px;
+  --border-radius-m: 24px;
+  --border-radius-l: 48px;
+  --border-radius-circle: 50%;
+  --padding-s: 1rem;
+  --margin-xs: 0.5rem;
+  --margin-s: 1rem; }
+
+/* DESKTOP FIRST MEDIA QUERY 
+
+1200px {NORMAL STYLE}
+
+1199px - 900px {TABLET LANDSCAPE} [tab-land]
+
+900px - 600px  {TABLET PORTRAIT} [tab-port]
+
+600px - 350px  {NORMAL PHONE} [phone]
+
+350px - 280px {SMALL PHOME} [pho-small}
+
+*/
+@keyframes blink {
+  0% {
+    height: var(--height); }
+  25% {
+    height: var(--height); }
+  50% {
+    height: 0; }
+  75% {
+    height: var(--height); }
+  100% {
+    height: var(--height); } }
+
+@media only screen and (max-width: 350px) {
+  @keyframes blink {
+    0% {
+      height: var(--height-small); }
+    25% {
+      height: var(--height-small); }
+    50% {
+      height: 0; }
+    75% {
+      height: var(--height-small); }
+    100% {
+      height: var(--height-small); } } }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 1199px) {
+    html {
+      font-size: 50%; } }
+
+.container {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-m);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end; }
+  @media only screen and (max-width: 900px) {
+    .container {
+      justify-content: unset; } }
+
+.pokedex {
+  width: 100%;
+  height: 50rem;
+  display: grid;
+  grid-template-columns: [boxOneStart] minmax(0, 1fr) [boxOneEnd boxTwoStart] minmax(0, 1fr) [boxTwoEnd];
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  z-index: 1;
+  transition: all 0.2s; }
+  @media only screen and (max-width: 1199px) {
+    .pokedex {
+      height: 60rem;
+      margin: 1.5rem 0; } }
+  @media only screen and (max-width: 900px) {
+    .pokedex {
+      height: 100%;
+      margin: 0;
+      grid-template-columns: [boxOneStart boxTwoStart] minmax(0, 1fr) [boxOneEnd boxTwoEnd];
+      grid-template-rows: 1.2fr 0.8fr 0.9fr 1.1fr;
+      gap: 2rem 0; } }
+
+.message {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-xl);
+  color: var(--color-grey-light);
+  font-style: italic;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem; }
+  .message :not(:last-child) {
+    margin-bottom: 2rem; }
+  .message__img {
+    width: 20rem; }
+  .message__pikachuImg {
+    width: 100%;
+    filter: opacity(50%); }
+  .message__instructions {
+    font-size: var(--font-size-s); }
+  .message__error {
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    color: var(--color-rotom-primary); }
+
+.heading-1,
+.heading-2, .heading-3 {
+  font-weight: 300;
+  font-size: var(--font-size-xl);
+  text-align: right; }
+  @media only screen and (max-width: 350px) {
+    .heading-1,
+    .heading-2, .heading-3 {
+      font-size: var(--font-size-l); } }
+
+.heading-1,
+.heading-2 {
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.heading-1 {
+  margin-top: var(--margin-xs);
+  color: var(--color-grey-dark); }
+  @media only screen and (max-width: 900px) {
+    .heading-1 {
+      text-align: center; } }
+
+.heading-2 {
+  margin-top: 0.3rem;
+  margin-bottom: var(--margin-xs); }
+
+.heading-3 {
+  font-size: var(--font-size-s);
+  text-align: center; }
+
+.bold {
+  font-weight: 700; }
+
+.effectTitles {
+  position: relative;
+  display: inline; }
+  .effectTitles::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    height: 100%;
+    width: 65%;
+    opacity: 0.7;
+    transform: scale(1.07, 1.05) skewX(-15deg);
+    background-image: linear-gradient(to top left, var(--color-primary), var(--color-primary-30)); }
+    @media only screen and (max-width: 1199px) {
+      .effectTitles::after {
+        width: 70%; } }
+    @media only screen and (max-width: 600px) {
+      .effectTitles::after {
+        width: 82%; } }
+
+.spinner {
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: 10rem auto;
+  text-align: center;
+  transition: all 0.2s; }
+  .spinner svg {
+    height: 6rem;
+    width: 6rem;
+    fill: var(--color-rotom-primary);
+    animation: rotate 2s infinite linear; }
+
+.pokedex__pokemon {
+  box-shadow: 0 2rem 6rem var(--color-primary-30);
+  border-radius: var(--border-radius-l);
+  padding: var(--padding-s);
+  padding: 1rem 2rem;
+  display: flex;
+  position: relative;
+  grid-column: boxOneStart / boxOneEnd;
+  grid-row: 1 / 2; }
+  @media only screen and (max-width: 900px) {
+    .pokedex__pokemon {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 1 / 2;
+      flex-direction: column; } }
+
+.pokedex__sprite {
+  flex: 0 0 35%;
+  align-self: center;
+  justify-self: center; }
+  @media only screen and (max-width: 1199px) {
+    .pokedex__sprite {
+      flex: 0 0 37.5%; } }
+
+.pokedex__img {
+  width: 100%; }
+
+.pokedex__number {
+  color: var(--color-primary-dark);
+  position: absolute;
+  top: -20%;
+  left: 2%; }
+  @media only screen and (max-width: 900px) {
+    .pokedex__number {
+      left: 0;
+      right: 0;
+      top: -38%;
+      text-align: center; } }
+  @media only screen and (max-width: 600px) {
+    .pokedex__number {
+      top: -25%; } }
+  @media only screen and (max-width: 350px) {
+    .pokedex__number {
+      top: -15%; } }
+
+.pokedex__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between; }
+
+.pokedex__types, .pokedex__abilities {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  font-style: italic; }
+
+.pokedex__abilities {
+  font-size: var(--font-size-s); }
+
+.pokedex__type, .pokedex__ability {
+  text-align: center;
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-m);
+  border: 1px solid var(--color-primary-dark); }
+
+.pokedex__ability {
+  align-self: center; }
+  .pokedex__ability:not(:last-child) {
+    margin-right: var(--margin-s); }
+
+.pokedex__description {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2rem 6rem var(--color-primary-30);
+  border-radius: var(--border-radius-l);
+  padding: var(--padding-s);
+  grid-column: boxTwoStart / boxTwoEnd;
+  grid-row: 1 / 2;
+  justify-content: space-between; }
+  @media only screen and (max-width: 900px) {
+    .pokedex__description {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 3 / 4; } }
+
+.pokedex__forms {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.pokedex__alternative {
+  text-align: center;
+  padding: var(--padding-s);
+  border-radius: var(--border-radius-m);
+  border: 1px solid var(--color-primary-dark);
+  margin-top: var(--margin-xs); }
+
+.pokedex__moves {
+  box-shadow: 0 2rem 6rem var(--color-primary-30);
+  border-radius: var(--border-radius-l);
+  padding: var(--padding-s);
+  display: flex;
+  flex-direction: column;
+  grid-column: boxTwoStart / boxTwoEnd;
+  grid-row: 2 / 3; }
+  @media only screen and (max-width: 900px) {
+    .pokedex__moves {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 4 / 5; } }
+
+.pokedex__moveset {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  list-style: none;
+  margin-top: var(--margin-xs);
+  padding: 0 1.1rem;
+  font-size: var(--font-size-s); }
+  @media only screen and (max-width: 350px) {
+    .pokedex__moveset {
+      font-size: var(--font-size-xs); } }
+
+.pokedex__move {
+  display: flex; }
+  .pokedex__move--name {
+    flex: 0 0 40%; }
+  .pokedex__move--type {
+    flex: 0 0 20%; }
+  .pokedex__move--dmgType {
+    flex: 0 0 20%; }
+  .pokedex__move--power {
+    flex: 0 0 20%; }
+  .pokedex__move:not(:last-child) {
+    margin-bottom: var(--margin-s); }
+
+.pokedex__stadistics {
+  box-shadow: 0 2rem 6rem var(--color-primary-30);
+  border-radius: var(--border-radius-l);
+  padding: var(--padding-s);
+  display: flex;
+  flex-direction: column;
+  grid-column: boxOneStart / boxOneEnd;
+  grid-row: 2 / 3; }
+  @media only screen and (max-width: 900px) {
+    .pokedex__stadistics {
+      grid-column: boxOneStart / BoxTwoEnd;
+      grid-row: 2 / 3; } }
+
+.pokedex__stats {
+  height: 100%;
+  font-size: var(--font-size-xl);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center; }
+  @media only screen and (max-width: 600px) {
+    .pokedex__stats {
+      font-size: var(--font-size-l); } }
+  @media only screen and (max-width: 350px) {
+    .pokedex__stats {
+      font-size: var(--font-size-m); } }
+
+.pokedex__stat {
+  list-style: none; }
+
+.rotom {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 800px;
+  border: 100px solid var(--color-rotom-primary);
+  border-top: 150px solid var(--color-rotom-primary);
+  background-color: var(--color-white);
+  position: relative;
+  z-index: 10; }
+  @media only screen and (max-width: 1199px) {
+    .rotom {
+      border: 70px solid var(--color-rotom-primary);
+      border-top: 150px solid var(--color-rotom-primary); } }
+  @media only screen and (max-width: 900px) {
+    .rotom {
+      height: 1200px; } }
+  @media only screen and (max-width: 600px) {
+    .rotom {
+      border: 30px solid var(--color-rotom-primary);
+      border-top: 120px solid var(--color-rotom-primary); } }
+  @media only screen and (max-width: 350px) {
+    .rotom {
+      border: 15px solid var(--color-rotom-primary);
+      border-top: 120px solid var(--color-rotom-primary); } }
+
+.rotom__dot {
+  padding: 10px;
+  border-radius: var(--border-radius-circle);
+  border: 5px solid var(--color-rotom-primary-dark);
+  background-color: var(--color-rotom-primary-light);
+  box-sizing: content-box;
+  position: absolute;
+  top: -22%; }
+  @media only screen and (max-width: 350px) {
+    .rotom__dot {
+      padding: 4px;
+      border: 2px solid var(--color-rotom-primary-dark); } }
+  @media only screen and (max-width: 900px) {
+    .rotom__dot {
+      top: -12%; } }
+  @media only screen and (max-width: 600px) {
+    .rotom__dot {
+      top: -10%; } }
+  .rotom__dot--right {
+    right: -6%; }
+    @media only screen and (max-width: 900px) {
+      .rotom__dot--right {
+        right: -8%; } }
+    @media only screen and (max-width: 600px) {
+      .rotom__dot--right {
+        right: -5.5%; } }
+    @media only screen and (max-width: 350px) {
+      .rotom__dot--right {
+        right: -2.5%; } }
+  .rotom__dot--left {
+    left: -6%; }
+    @media only screen and (max-width: 900px) {
+      .rotom__dot--left {
+        left: -8%; } }
+    @media only screen and (max-width: 600px) {
+      .rotom__dot--left {
+        left: -5.5%; } }
+    @media only screen and (max-width: 350px) {
+      .rotom__dot--left {
+        left: -2.5%; } }
+  .rotom__dot--right::before, .rotom__dot--left::before {
+    content: '';
+    padding: 10px;
+    border-radius: var(--border-radius-circle);
+    border: 5px solid var(--color-rotom-primary-dark);
+    background-color: var(--color-rotom-primary-light);
+    box-sizing: content-box;
+    position: absolute;
+    top: 145%;
+    left: -25%; }
+    @media only screen and (max-width: 350px) {
+      .rotom__dot--right::before, .rotom__dot--left::before {
+        padding: 4px;
+        border: 2px solid var(--color-rotom-primary-dark); } }
+
+.rotom__eyes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 200px;
+  border-radius: var(--border-radius-circle);
+  border: 5px solid var(--color-rotom-dark-blue);
+  background-color: var(--color-white);
+  position: absolute;
+  top: -25%;
+  z-index: 100; }
+  @media only screen and (max-width: 900px) {
+    .rotom__eyes {
+      width: 110px;
+      height: 180px;
+      top: -13%; } }
+  @media only screen and (max-width: 600px) {
+    .rotom__eyes {
+      width: 90px;
+      height: 160px;
+      border: 4px solid var(--color-rotom-dark-blue);
+      top: -11%; } }
+  @media only screen and (max-width: 350px) {
+    .rotom__eyes {
+      top: -10%;
+      width: 70px;
+      height: 120px; } }
+  .rotom__eyes--right {
+    left: 25%;
+    transform: rotate(-15deg); }
+    @media only screen and (max-width: 900px) {
+      .rotom__eyes--right {
+        left: 5%; } }
+    @media only screen and (max-width: 600px) {
+      .rotom__eyes--right {
+        transform: rotate(-10deg); } }
+  .rotom__eyes--left {
+    right: 25%;
+    transform: rotate(15deg); }
+    @media only screen and (max-width: 900px) {
+      .rotom__eyes--left {
+        right: 5%; } }
+    @media only screen and (max-width: 600px) {
+      .rotom__eyes--left {
+        transform: rotate(10deg); } }
+  .rotom__eyes::before {
+    content: '';
+    width: 150px;
+    border: 5px solid var(--color-rotom-blue);
+    z-index: 1; }
+    @media only screen and (max-width: 900px) {
+      .rotom__eyes::before {
+        border: 4px solid var(--color-rotom-blue); } }
+    @media only screen and (max-width: 350px) {
+      .rotom__eyes::before {
+        border: 1px solid var(--color-rotom-blue); } }
+  .rotom__eyes::after {
+    content: '';
+    width: 60px;
+    border-radius: var(--border-radius-circle);
+    background-color: var(--color-rotom-blue);
+    position: absolute;
+    animation: blink 5s infinite; }
+    @media only screen and (max-width: 350px) {
+      .rotom__eyes::after {
+        width: 40px; } }
+
+.rotom__mouth {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 380px;
+  height: 250px;
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-white);
+  position: absolute;
+  top: -3%; }
+  @media only screen and (max-width: 1199px) {
+    .rotom__mouth {
+      width: 430px; } }
+  @media only screen and (max-width: 900px) {
+    .rotom__mouth {
+      top: -8%;
+      width: 460px; } }
+  @media only screen and (max-width: 600px) {
+    .rotom__mouth {
+      width: 290px;
+      height: 200px; } }
+  @media only screen and (max-width: 350px) {
+    .rotom__mouth {
+      width: 220px;
+      height: 100px; } }
+
+.rotom::before {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  content: '';
+  width: 350px;
+  height: 150px;
+  border-top-right-radius: var(--border-radius-circle);
+  border-top-left-radius: var(--border-radius-circle);
+  background-color: var(--color-black);
+  position: absolute;
+  top: -23%;
+  z-index: 0; }
+  @media only screen and (max-width: 1199px) {
+    .rotom::before {
+      width: 310px;
+      top: -20%; } }
+  @media only screen and (max-width: 900px) {
+    .rotom::before {
+      content: none; } }
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  position: relative;
+  z-index: 5; }
+  @media only screen and (max-width: 900px) {
+    .form {
+      transform: translateY(-4rem); } }
+  @media only screen and (max-width: 600px) {
+    .form {
+      transform: translateY(-9rem); } }
+  @media only screen and (max-width: 350px) {
+    .form {
+      transform: translateY(-7.5rem); } }
+  .form__wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute; }
+  .form__input {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-m);
+    font-weight: 300;
+    width: 11rem;
+    height: 4rem;
+    border-radius: var(--border-radius-l);
+    padding-left: 1rem;
+    padding-right: 2.7rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-grey-light);
+    backface-visibility: hidden;
+    transition: all 0.2s; }
+    @media only screen and (max-width: 600px) {
+      .form__input {
+        width: 8rem;
+        font-size: var(--font-size-xs);
+        padding-left: 0.5rem;
+        padding-right: 1.5rem; } }
+    .form__input::-webkit-input-placeholder {
+      color: var(--color-grey-light); }
+    .form__input:focus {
+      width: 20rem;
+      padding-right: 3.5rem;
+      border: 1px solid var(--color-grey-dark); }
+      @media only screen and (max-width: 600px) {
+        .form__input:focus {
+          width: 10rem; } }
+  .form__button, .form__button-icon {
+    width: 2rem;
+    height: 2rem; }
+    @media only screen and (max-width: 600px) {
+      .form__button, .form__button-icon {
+        width: 1.5rem;
+        height: 1.5rem; } }
+  .form__button {
+    background-color: var(--color-white);
+    border: none;
+    position: absolute;
+    right: 7%; }
+  .form__button-icon {
+    fill: var(--color-grey-light); }
