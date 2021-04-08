@@ -17,11 +17,10 @@ html {
 
 .container {
   @include fontRelated;
-  @include flexColum;
+  @include flexColumn;
   height: 100%;
   justify-content: flex-end;
 
-  // position: relative;
   @include responsive(tab-port) {
     justify-content: unset;
   }
@@ -31,9 +30,6 @@ html {
   width: 100%;
   height: 50rem;
 
-  // height 60rem
-  // margin top 1.5rem
-
   display: grid;
   //prettier-ignore
   grid-template-columns: 
@@ -41,22 +37,19 @@ html {
   minmax(0,1fr) [boxTwoEnd];
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 2rem;
-  // position: absolute;
-  // z-index: 5;
   z-index: 1;
   transition: all 0.2s;
 
   @include responsive(tab-land) {
     height: 60rem;
     margin: 1.5rem 0;
-    // gap: 1rem;
   }
 
   @include responsive(tab-port) {
     height: 100%;
-    gap: 2rem 0;
     margin: 0;
     grid-template-columns: [boxOneStart boxTwoStart] minmax(0, 1fr) [boxOneEnd boxTwoEnd];
     grid-template-rows: 1.2fr 0.8fr 0.9fr 1.1fr;
+    gap: 2rem 0;
   }
 }

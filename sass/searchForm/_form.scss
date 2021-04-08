@@ -1,7 +1,6 @@
 .form {
   @include flexHorizonCenter;
   height: 5rem;
-
   position: relative;
   z-index: 5;
 
@@ -26,11 +25,9 @@
     @include fontRelated;
     width: 11rem;
     height: 4rem;
-
     border-radius: var(--border-radius-l);
     padding-left: 1rem;
     padding-right: 2.7rem;
-
     background-color: var(--color-white);
     border: 1px solid var(--color-grey-light);
     backface-visibility: hidden;
@@ -58,13 +55,10 @@
     }
   }
 
-  &__button {
+  &__button,
+  &__button-icon {
     width: 2rem;
     height: 2rem;
-    background-color: var(--color-white);
-    border: none;
-    position: absolute;
-    right: 7%;
 
     @include responsive(phone) {
       width: 1.5rem;
@@ -72,14 +66,14 @@
     }
   }
 
-  &__button-icon {
-    width: 2rem;
-    height: 2rem;
-    fill: var(--color-grey-light);
+  &__button {
+    background-color: var(--color-white);
+    border: none;
+    position: absolute;
+    right: 7%;
+  }
 
-    @include responsive(phone) {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+  &__button-icon {
+    fill: var(--color-grey-light);
   }
 }

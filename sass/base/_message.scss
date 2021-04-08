@@ -1,5 +1,5 @@
 .message {
-  @include flexColum;
+  @include flexColumn;
   font-size: var(--font-size-xl);
   color: var(--color-grey-light);
   font-style: italic;
@@ -35,23 +35,3 @@
     color: var(--color-rotom-primary);
   }
 }
-
-// .welcome-message,
-// .message {
-//   font-size: 2.5rem;
-//   font-weight: 700;
-//   text-align: center;
-//   color: var(--color-rotom-primary);
-
-//   transition: all 0.2s;
-
-//   :not(:last-child) {
-//     margin-bottom: 1rem;
-//   }
-// }
-
-// .welcome-message {
-//   font-weight: 400;
-//   font-size: 3.5rem;
-//   color: var(--color-grey-light);
-// }

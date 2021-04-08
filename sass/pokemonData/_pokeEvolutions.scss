@@ -1,6 +1,6 @@
 .pokedex {
   &__description {
-    @include flexColum;
+    @include flexColumn;
     @include shadowRadiusPadding;
 
     grid-column: boxTwoStart / boxTwoEnd;
@@ -13,10 +13,6 @@
     }
   }
 
-  // &__description-title {
-  //   align-self: center;
-  // }
-
   &__forms {
     list-style-type: none;
     display: flex;
@@ -27,6 +23,6 @@
 
   &__alternative {
     @include paddingRadiusBorderCenter;
-    margin-top: 0.5rem;
+    margin-top: var(--margin-xs);
   }
 }

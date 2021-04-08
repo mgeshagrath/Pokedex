@@ -1,7 +1,7 @@
 .pokedex {
   &__moves {
     @include shadowRadiusPadding;
-    @include flexColum;
+    @include flexColumn;
     grid-column: boxTwoStart / boxTwoEnd;
     grid-row: 2 / 3;
 
@@ -12,11 +12,11 @@
   }
 
   &__moveset {
-    @include flexColum;
+    @include flexColumn;
     justify-content: space-between;
     height: 100%;
     list-style: none;
-    margin-top: 0.5rem;
+    margin-top: var(--margin-xs);
     padding: 0 1.1rem;
     font-size: var(--font-size-s);
 
@@ -45,7 +45,7 @@
     }
 
     &:not(:last-child) {
-      margin-bottom: 1rem;
+      margin-bottom: var(--margin-s);
     }
   }
 }

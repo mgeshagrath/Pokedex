@@ -1,3 +1,17 @@
+/* DESKTOP FIRST MEDIA QUERY 
+
+1200px {NORMAL STYLE}
+
+1199px - 900px {TABLET LANDSCAPE} [tab-land]
+
+900px - 600px  {TABLET PORTRAIT} [tab-port]
+
+600px - 350px  {NORMAL PHONE} [phone]
+
+350px - 280px {SMALL PHOME} [pho-small}
+
+*/
+
 @mixin responsive($breakpoint) {
   @if $breakpoint == tab-land {
     @media only screen and (max-width: 1199px) {
@@ -16,7 +30,7 @@
   }
 
   @if $breakpoint == pho-small {
-    @media only screen and (max-width: 349px) {
+    @media only screen and (max-width: 350px) {
       @content;
     }
   }
@@ -35,7 +49,7 @@
   border: 1px solid var(--color-primary-dark);
 }
 
-@mixin flexColum {
+@mixin flexColumn {
   display: flex;
   flex-direction: column;
 }
@@ -78,5 +92,4 @@
   font-family: var(--font-primary);
   font-size: var(--font-size-m);
   font-weight: 300;
-  // font-style: italic;
 }

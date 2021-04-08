@@ -9,11 +9,9 @@
     background-color: var(--color-white);
     position: absolute;
     top: -3%;
-    // z-index: 2;
 
     @include responsive(tab-land) {
       width: 430px;
-      // height: 100px;
     }
 
     @include responsive(tab-port) {

@@ -1,10 +1,9 @@
 .pokedex {
   &__stadistics {
     @include shadowRadiusPadding;
-    @include flexColum;
+    @include flexColumn;
     grid-column: boxOneStart / boxOneEnd;
     grid-row: 2 / 3;
-    // align-items: center;
 
     @include responsive(tab-port) {
       grid-column: boxOneStart / BoxTwoEnd;
