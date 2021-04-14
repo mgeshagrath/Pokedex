@@ -13,13 +13,17 @@
 
   // Content colors
 
-  --color-primary: #5ec576;
-  --color-primary-dark: #4bbb7d;
-  --color-primary-30: #5ec5764d;
+  --color-primary: #5ec576; // handle with javascript
+  --color-primary-dark: #4bbb7d; // handle with javascript
+  --color-primary-30: #5ec5764d; // handle with javascript
+
   --color-white: #f2f3f4;
   --color-grey-light: #ccc;
   --color-grey-dark: #333;
   --color-black: #000;
+
+  // Popup font color
+  --popup-font-color: #000; // handle with javascript
 
   // Fonts
   --font-primary: 'Lato', sans-serif;
@@ -27,7 +31,11 @@
   --font-size-s: 1.35rem;
   --font-size-m: 1.6rem;
   --font-size-l: 2rem;
-  --font-size-xl: 2.9rem;
+  --font-size-xl: 2.5rem;
+
+  --font-weight-s: 300;
+  --font-weight-m: 400;
+  --font-weight-l: 700;
 
   // Border radius
   --border-radius-s: 12px;
@@ -36,9 +44,22 @@
   --border-radius-circle: 50%;
 
   // Paddings
+  --padding-xs: 0.5rem;
   --padding-s: 1rem;
+  --padding-m: 1.5rem;
+  --padding-l: 2rem;
 
   // Margins
   --margin-xs: 0.5rem;
   --margin-s: 1rem;
+  --margin-m: 1.5rem;
+  --margin-l: 2rem;
+  --margin-xl: 3rem;
+
+  // grid-gap
+
+  --gap-xs: 0.5rem;
+  --gap-s: 1rem;
+  --gap-m: 1.5rem;
+  --gap-l: 2rem;
 }

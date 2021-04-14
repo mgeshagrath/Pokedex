@@ -26,7 +26,7 @@
     width: 11rem;
     height: 4rem;
     border-radius: var(--border-radius-l);
-    padding-left: 1rem;
+    padding-left: var(--padding-s);
     padding-right: 2.7rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-grey-light);
@@ -36,8 +36,8 @@
     @include responsive(phone) {
       width: 8rem;
       font-size: var(--font-size-xs);
-      padding-left: 0.5rem;
-      padding-right: 1.5rem;
+      padding-left: var(--padding-xs);
+      padding-right: var(--padding-m);
     }
 
     &::-webkit-input-placeholder {

@@ -1,5 +1,10 @@
 .bold {
-  font-weight: 700;
+  font-weight: var(--font-weight-l);
+}
+
+.display-block {
+  margin-top: var(--margin-xl);
+  display: block;
 }
 
 .effectTitles {
@@ -45,4 +50,21 @@
     fill: var(--color-rotom-primary);
     animation: rotate 2s infinite linear;
   }
+}
+
+.basicBorderStyle {
+  @include paddingRadiusBorderCenter;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+.linkReset {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
 }

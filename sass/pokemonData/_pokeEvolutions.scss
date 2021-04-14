@@ -6,11 +6,17 @@
     grid-column: boxTwoStart / boxTwoEnd;
     grid-row: 1 / 2;
     justify-content: space-between;
+    text-transform: capitalize;
 
     @include responsive(tab-port) {
       grid-column: boxOneStart / BoxTwoEnd;
       grid-row: 3 / 4;
     }
+  }
+
+  &__evolution {
+    @include hoverEffect;
+    transition: all 0.2s;
   }
 
   &__forms {

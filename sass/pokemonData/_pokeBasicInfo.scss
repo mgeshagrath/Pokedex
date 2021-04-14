@@ -1,7 +1,7 @@
 .pokedex {
   &__pokemon {
     @include shadowRadiusPadding;
-    padding: 1rem 2rem;
+    padding: var(--padding-s) var(--padding-l);
     display: flex;
     position: relative;
     grid-column: boxOneStart / boxOneEnd;
@@ -21,6 +21,8 @@
     justify-self: center;
 
     @include responsive(tab-land) {
+      @include flexColumn;
+      justify-content: center;
       flex: 0 0 37.5%;
     }
   }
@@ -37,12 +39,12 @@
 
     @include responsive(tab-port) {
       @include leftNRightAtZero;
-      top: -38%;
+      top: -6%;
       text-align: center;
     }
 
     @include responsive(phone) {
-      top: -25%;
+      top: -20%;
     }
 
     @include responsive(pho-small) {
@@ -61,10 +63,10 @@
 
   &__types,
   &__abilities {
+    text-transform: capitalize;
     list-style: none;
     display: flex;
     justify-content: space-evenly;
-    font-style: italic;
   }
   // Abilities label
 
@@ -72,16 +74,8 @@
     font-size: var(--font-size-s);
   }
 
-  &__type,
   &__ability {
-    @include paddingRadiusBorderCenter;
-  }
-
-  &__ability {
-    align-self: center;
-
-    &:not(:last-child) {
-      margin-right: var(--margin-s);
-    }
+    @include hoverEffect;
+    transition: all 0.2s;
   }
 }

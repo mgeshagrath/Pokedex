@@ -1,5 +1,5 @@
 %heading {
-  font-weight: 300;
+  font-weight: var(--font-weight-s);
   font-size: var(--font-size-xl);
   text-align: right;
 
@@ -12,7 +12,7 @@
 .heading-2 {
   @extend %heading;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: var(--font-weight-l);
 }
 
 .heading-1 {
