@@ -9,11 +9,12 @@
   background-image: linear-gradient(
     to top left,
     var(--color-primary),
-    var(--color-primary-30)
+    var(--color-primary-dark)
   );
   padding: var(--padding-l);
   max-width: 45rem;
   min-height: 10rem;
+  line-height: 2.4rem;
   position: absolute;
   z-index: 500;
   transition: all 0.2s;
@@ -53,7 +54,7 @@
     box-shadow: 40px -34px 0 0 var(--color-primary-30),
       -28px -6px 0 -2px var(--color-primary-30),
       -24px 17px 0 -6px var(--color-primary),
-      -5px 25px 0 -10px var(--color-primary-dark);
+      -5px 25px 0 -10px var(--color-primary-30);
   }
 
   &__name {
@@ -79,7 +80,7 @@
   @include leftNRightAtZero;
   height: 100vh;
   background-color: var(--color-black);
-  opacity: 0.7;
+  opacity: 0.5;
   position: fixed;
   top: 0;
   z-index: 150;

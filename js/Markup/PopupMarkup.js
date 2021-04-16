@@ -13,11 +13,13 @@ export const popupMarkup = function (state, flag, emojiObj = '') {
   </h3>
 
   <h4>Short Effect</h4>
-  <p class="popup__info">${state.shortEffect}</p>
+  <p class="popup__info">${
+    state?.shortEffect ?? 'Sorry, there is no data from this yet!'
+  }</p>
   
   <h4>Effect</h4>
   <p class="popup__specificinfo">
-   ${state.effect}
+   ${state?.effect ?? 'Sorry, there is no data from this yet!'}
   </p>
 `;
 

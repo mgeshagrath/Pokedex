@@ -141,7 +141,7 @@ export const updateCssColors = function (pokemonType) {
   setCssProperty('--color-primary-dark', pokemonColor.primaryDark);
   setCssProperty('--color-primary-30', pokemonColor.primaryLight);
 
-  if (type === 'dark' || type === 'poison')
+  if (type === 'dark' || type === 'poison' || type === 'ghost')
     setCssProperty('--popup-font-color', '#fff');
   else setCssProperty('--popup-font-color', '#000');
 };

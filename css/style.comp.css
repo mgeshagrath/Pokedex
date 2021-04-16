@@ -7,9 +7,9 @@
   --color-rotom-dark-blue: #0c1b71;
   --height: 95px;
   --height-small: 65px;
-  --color-primary: #5ec576;
-  --color-primary-dark: #4bbb7d;
-  --color-primary-30: #5ec5764d;
+  --color-primary: #ccc;
+  --color-primary-dark: #333;
+  --color-primary-30: #3333334d;
   --color-white: #f2f3f4;
   --color-grey-light: #ccc;
   --color-grey-dark: #333;
@@ -157,6 +157,7 @@ html {
 
 .heading-2 {
   margin-top: 0.3rem;
+  padding-right: var(--padding-s);
   margin-bottom: var(--margin-xs); }
 
 .heading-3 {
@@ -234,7 +235,8 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: var(--margin-xl); }
+  margin-top: var(--margin-xl);
+  padding: var(--padding-l); }
   .message :not(:last-child) {
     margin-bottom: var(--margin-l); }
   .message__img {
@@ -262,10 +264,11 @@ html {
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(to top left, var(--color-primary), var(--color-primary-30));
+  background-image: linear-gradient(to top left, var(--color-primary), var(--color-primary-dark));
   padding: var(--padding-l);
   max-width: 45rem;
   min-height: 10rem;
+  line-height: 2.4rem;
   position: absolute;
   z-index: 500;
   transition: all 0.2s; }
@@ -294,7 +297,7 @@ html {
     right: 26px;
     width: 30px;
     height: 30px;
-    box-shadow: 40px -34px 0 0 var(--color-primary-30), -28px -6px 0 -2px var(--color-primary-30), -24px 17px 0 -6px var(--color-primary), -5px 25px 0 -10px var(--color-primary-dark); }
+    box-shadow: 40px -34px 0 0 var(--color-primary-30), -28px -6px 0 -2px var(--color-primary-30), -24px 17px 0 -6px var(--color-primary), -5px 25px 0 -10px var(--color-primary-30); }
   .popup__name {
     text-transform: uppercase; }
   .popup__hidden {
@@ -313,7 +316,7 @@ html {
   right: 0;
   height: 100vh;
   background-color: var(--color-black);
-  opacity: 0.7;
+  opacity: 0.5;
   position: fixed;
   top: 0;
   z-index: 150; }
@@ -399,9 +402,12 @@ html {
   font-size: var(--font-size-s); }
 
 .pokedex__ability {
+  outline: none;
   transition: all 0.2s; }
   .pokedex__ability:hover {
     color: var(--color-primary-dark); }
+  .pokedex__ability:focus {
+    box-shadow: 0 0 1px 2px var(--color-primary); }
 
 .pokedex__description {
   display: flex;
@@ -419,9 +425,12 @@ html {
       grid-row: 3 / 4; } }
 
 .pokedex__evolution {
+  outline: none;
   transition: all 0.2s; }
   .pokedex__evolution:hover {
     color: var(--color-primary-dark); }
+  .pokedex__evolution:focus {
+    box-shadow: 0 0 1px 2px var(--color-primary); }
 
 .pokedex__forms {
   list-style-type: none;
@@ -477,6 +486,7 @@ html {
     font-size: 1.2rem;
     font-weight: 300;
     border: none;
+    outline: none;
     background-color: var(--color-white);
     border: 1px solid var(--color-primary-dark);
     padding: 0.8rem 1.2rem;
@@ -485,6 +495,8 @@ html {
     display: flex;
     align-items: center;
     transition: all 0.2s; }
+    .pagination__btn:focus {
+      box-shadow: 0 0 1px 2px var(--color-primary); }
     .pagination__btn--next {
       grid-column: 2 / 3;
       grid-row: 1 / 2;
@@ -756,6 +768,7 @@ html {
     padding-right: 2.7rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-grey-light);
+    outline: none;
     backface-visibility: hidden;
     transition: all 0.2s; }
     @media only screen and (max-width: 600px) {
@@ -769,7 +782,7 @@ html {
     .form__input:focus {
       width: 20rem;
       padding-right: 3.5rem;
-      border: 1px solid var(--color-grey-dark); }
+      box-shadow: 0 0 1px 2px var(--color-primary); }
       @media only screen and (max-width: 600px) {
         .form__input:focus {
           width: 10rem; } }
@@ -783,6 +796,7 @@ html {
   .form__button {
     background-color: var(--color-white);
     border: none;
+    outline: none;
     position: absolute;
     right: 7%; }
   .form__button-icon {

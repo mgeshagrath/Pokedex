@@ -30,6 +30,7 @@
     padding-right: 2.7rem;
     background-color: var(--color-white);
     border: 1px solid var(--color-grey-light);
+    outline: none;
     backface-visibility: hidden;
     transition: all 0.2s;
 
@@ -47,7 +48,7 @@
     &:focus {
       width: 20rem;
       padding-right: 3.5rem;
-      border: 1px solid var(--color-grey-dark);
+      box-shadow: 0 0 1px 2px var(--color-primary);
 
       @include responsive(phone) {
         width: 10rem;
@@ -69,6 +70,7 @@
   &__button {
     background-color: var(--color-white);
     border: none;
+    outline: none;
     position: absolute;
     right: 7%;
   }

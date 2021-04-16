@@ -16,7 +16,12 @@
 
   &__evolution {
     @include hoverEffect;
+    outline: none;
     transition: all 0.2s;
+
+    &:focus {
+      box-shadow: 0 0 1px 2px var(--color-primary);
+    }
   }
 
   &__forms {
