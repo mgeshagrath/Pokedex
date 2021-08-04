@@ -45,8 +45,8 @@
 
 - [x] Search any pokemon
 - [x] Abilities information
-- [x] Skills information
-- [x] Sprites till gen V are render as gif!
+- [x] Skills details
+- [x] Sprites till gen V are rendered as gif!
 - [x] 100% responsive
 
 ## How To Use
