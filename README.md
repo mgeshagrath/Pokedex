@@ -8,7 +8,7 @@
 <div align="center">
   <h3>
     <span> | </span>
-       <a href="https://michan-9.github.io/">
+       <a href="https://michan-9.github.io/" target='_blank'>
       Live
     </a>
     <span> | </span>
