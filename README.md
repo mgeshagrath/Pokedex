@@ -8,7 +8,7 @@
 <div align="center">
   <h3>
     <span> | </span>
-       <a href="https://michan-9.github.io/" target='_blank'>
+       <a href="https://michan-9.github.io/Pokedex">
       Live
     </a>
     <span> | </span>
