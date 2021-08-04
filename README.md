@@ -36,7 +36,7 @@
  [HTML]
  [CSS]
  [SASS]
- [Vanilla JavaScript]
+ [VANILLA JAVASCRIPT]
  [AUTO-PREFIXER]
  [CSS COMPRESSED]
 
