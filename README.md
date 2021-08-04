@@ -68,4 +68,4 @@ $ npm start
 ## Contact
 
 - GitHub [michan-9](https://github.com/michan-9/)
-- Twitter [Panduroyagua](https://twitter.com/panduroyagua)
+- LinkedIn [Miguel Ramirez](https://www.linkedin.com/in/dinocook/)
